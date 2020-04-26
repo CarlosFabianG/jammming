@@ -12,6 +12,10 @@ class App extends Component {
     playlistTracks: [{name: 'lola', artist: 'mana', album: 'san blas'}]
   }
 
+  addTrack(){
+ 
+  }
+
 
   render(){
     return (
@@ -20,7 +24,7 @@ class App extends Component {
         <div className="App">
           < SearchBar />
           <div className="App-playlist">
-              < SearchResults searchResults={this.state.searchResults}/>
+              < SearchResults onAdd={this.addTrack()} searchResults={this.state.searchResults}/>
               < Playlist playlistName={this.state.playlistName} 
                          playlistTracks={this.state.playlistTracks}
               />

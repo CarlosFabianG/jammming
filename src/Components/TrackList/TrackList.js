@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import './TrackList.css'
-import SearchResults from '../SearchResults/SearchResults'
 import Track from '../Track/Track'
 
 class TrackList extends Component {
@@ -13,6 +12,8 @@ class TrackList extends Component {
                     track => < Track 
                                 key={track.id} 
                                 track={track} 
+                                onAdd={this.props.onAdd}
+                                isRemoval={false}
                             />
                 )} 
             </div>
