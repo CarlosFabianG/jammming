@@ -1,23 +1,20 @@
 import React, { Component } from 'react'
 import './TrackList.css'
-import SearchResults from '../SearchResults'
-import Track from '../Track'
+import SearchResults from '../SearchResults/SearchResults'
+import Track from '../Track/Track'
 
 class TrackList extends Component {
     render(){
         return(
             <>
             <div className="TrackList">
-                <SearchResults 
-                tracks={this.props.searchResults.map(
+
+                {this.props.tracks.map(
                     track => < Track 
                                 key={track.id} 
-                                name={track.name} 
-                                artist={track.artist}
-                                album={track.album}
+                                track={track} 
                             />
                 )} 
-                />
             </div>
             </>
         )
