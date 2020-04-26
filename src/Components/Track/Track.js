@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 
+
 class Track extends Component {
 
     state = {
@@ -17,8 +18,8 @@ class Track extends Component {
         return(
     <div className="Track">
         <div className="Track-information">
-            <h3>track name will go here</h3>
-            <p>track artist will go here--> | track album will go here --></p>
+            <h3>{this.props.name}</h3>
+            <p>{this.props.artist} | {this.props.album}</p>
         </div>
         {this.state.isRemoval ? <button onclick = {renderAction()} className="Track-action">+</button> 
         :<button className="Track-action">-</button>}
