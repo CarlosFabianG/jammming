@@ -5,19 +5,26 @@ import Playlist from '../Playlist/Playlist'
 import SearchBar from '../SearchBar/SearchBar'
 
 class App extends Component {
-  state = {
-    searchResults:[{name:'En el muelle de San blas', artist:'Mana', album:'San Blas'},
-    {name:'En el muelle de San blas', artist:'Mana', album:'San Blas'}],
-    playlistName: 'cool music',
-    playlistTracks: [{name: 'no se tu', artist: 'Luis Miguel', album:'romances'}]
+  constructor(props){
+    super(props)
+
+    this.state = {
+      searchResults:[{name:'En el muelle de San blas', artist:'Mana', album:'San Blas'},
+      {name:'En el muelle de San blas', artist:'Mana', album:'San Blas'}],
+      playlistName: 'cool music',
+      playlistTracks: [{name: 'no se tu', artist: 'Luis Miguel', album:'romances'}]
+    }
+    this.addTrack = this.addTrack.bind(this)
   }
+  
 
   addTrack(track){
     console.log(track)
+    console.log(this.state.playlistTracks)
     if(this.state.playlistTracks.find(
       savedTrack => savedTrack.id === track.id)) return
 
-      //this.state.playlistTracks.push(track)
+      this.state.playlistTracks.push(track)
   }
 
 
