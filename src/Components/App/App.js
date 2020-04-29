@@ -3,14 +3,13 @@ import './App.css'
 import SearchResults from '../SearchResults/SearchResults'
 import Playlist from '../Playlist/Playlist'
 import SearchBar from '../SearchBar/SearchBar'
-import Track from '../Track/Track'
 
 class App extends Component {
   state = {
     searchResults:[{name:'En el muelle de San blas', artist:'Mana', album:'San Blas'},
     {name:'En el muelle de San blas', artist:'Mana', album:'San Blas'}],
     playlistName: 'cool music',
-    playlistTracks: []
+    playlistTracks: [{name: 'no se tu', artist: 'Luis Miguel', album:'romances'}]
   }
 
   addTrack(track){
@@ -18,7 +17,7 @@ class App extends Component {
     if(this.state.playlistTracks.find(
       savedTrack => savedTrack.id === track.id)) return
 
-      this.state.playlistTracks.push(track)
+      //this.state.playlistTracks.push(track)
   }
 
 
