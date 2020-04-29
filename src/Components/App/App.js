@@ -19,14 +19,17 @@ class App extends Component {
   
 
   addTrack(track){
-    console.log(track)
-    console.log(this.state.playlistTracks)
     const tracks = this.state.playlistTracks
     if(tracks.find(
       savedTrack => savedTrack.id === track.id))return
       tracks.push(track)
-      console.log(tracks)
       this.setState({playlistTracks: tracks})
+  }
+
+  removeTrack = (track) => {
+    const tracks = this.state.playlistTracks
+    tracks = tracks.filter( removeTrack => track.id !== removeTrack.id)
+    this.setState({playlistTracks: tracks})
   }
 
 
