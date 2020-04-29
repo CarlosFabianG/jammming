@@ -9,10 +9,10 @@ class App extends Component {
     super(props)
 
     this.state = {
-      searchResults:[{name:'En el muelle de San blas', artist:'Mana', album:'San Blas'},
-      {name:'En el muelle de San blas', artist:'Mana', album:'San Blas'}],
+      searchResults:[{name:'En el muelle de San blas', artist:'Mana', album:'San Blas', id:1},
+      {name:'rayando el sol', artist:'Mana', album:'San Blas', id:2}],
       playlistName: 'cool music',
-      playlistTracks: [{name: 'no se tu', artist: 'Luis Miguel', album:'romances'}]
+      playlistTracks: [{name: 'no se tu', artist: 'Luis Miguel', id:3}]
     }
     this.addTrack = this.addTrack.bind(this)
   }
@@ -21,10 +21,12 @@ class App extends Component {
   addTrack(track){
     console.log(track)
     console.log(this.state.playlistTracks)
-    if(this.state.playlistTracks.find(
-      savedTrack => savedTrack.id === track.id)) return
-
-      this.state.playlistTracks.push(track)
+    const tracks = this.state.playlistTracks
+    if(tracks.find(
+      savedTrack => savedTrack.id === track.id))return
+      tracks.push(track)
+      console.log(tracks)
+      this.setState({playlistTracks: tracks})
   }
 
 
