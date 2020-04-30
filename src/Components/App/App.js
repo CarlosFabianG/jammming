@@ -21,6 +21,10 @@ class App extends Component {
     console.log(name)
     this.setState({playlistName: name})
   }
+
+  savePlaylist = () => {
+    const trackURIs = this.state.playlistTracks.filter(track => track.includes(track.uri))
+  }
   
   addTrack(track){
     const tracks = this.state.playlistTracks
@@ -49,6 +53,7 @@ class App extends Component {
                          playlistTracks={this.state.playlistTracks}
                          onRemove={this.removeTrack}
                          onNameChange = {this.updatePlaylistName}
+                         onSave = {this.savePlaylist}
               />
           </div>
         </div>
