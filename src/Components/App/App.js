@@ -12,18 +12,18 @@ class App extends Component {
       searchResults:[{name:'En el muelle de San blas', artist:'Mana', album:'San Blas', id:1},
       {name:'rayando el sol', artist:'Mana', album:'San Blas', id:2}],
       playlistName: 'cool music',
-      playlistTracks: [{name: 'no se tu', artist: 'Luis Miguel', id:3}]
+      playlistTracks: [{name: 'no se tu', artist: 'Luis Miguel', id:3, uri:46}]
     }
     this.addTrack = this.addTrack.bind(this)
   }
 
   updatePlaylistName = (name) => {
-    console.log(name)
     this.setState({playlistName: name})
   }
 
   savePlaylist = () => {
-    const trackURIs = this.state.playlistTracks.filter(track => track.includes(track.uri))
+    const trackURIs = this.state.playlistTracks.map(track => track.uri && track.uri)
+    console.log(trackURIs)
   }
   
   addTrack(track){
