@@ -16,6 +16,10 @@ class App extends Component {
     }
     this.addTrack = this.addTrack.bind(this)
   }
+
+  updatePlaylistName = (name) => {
+    this.setState({playlistName: name})
+  }
   
 
   addTrack(track){
