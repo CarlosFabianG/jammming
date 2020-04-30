@@ -18,10 +18,10 @@ class App extends Component {
   }
 
   updatePlaylistName = (name) => {
+    console.log(name)
     this.setState({playlistName: name})
   }
   
-
   addTrack(track){
     const tracks = this.state.playlistTracks
     if(tracks.find(
@@ -48,6 +48,7 @@ class App extends Component {
               < Playlist playlistName={this.state.playlistName} 
                          playlistTracks={this.state.playlistTracks}
                          onRemove={this.removeTrack}
+                         onNameChange = {this.updatePlaylistName}
               />
           </div>
         </div>
