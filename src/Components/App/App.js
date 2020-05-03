@@ -17,6 +17,10 @@ class App extends Component {
     this.addTrack = this.addTrack.bind(this)
   }
 
+  search = (term) => {
+    console.log(term)
+  }
+
   updatePlaylistName = (name) => {
     this.setState({playlistName: name})
   }
