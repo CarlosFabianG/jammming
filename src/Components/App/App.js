@@ -50,7 +50,7 @@ class App extends Component {
       <div>
         <h1>Ja<span className="highlight">mmm</span>ing</h1>
         <div className="App">
-          < SearchBar />
+          < SearchBar onSearch={this.search}/>
           <div className="App-playlist">
               < SearchResults onAdd={this.addTrack} searchResults={this.state.searchResults}/>
               < Playlist playlistName={this.state.playlistName} 
