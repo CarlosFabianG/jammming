@@ -8,9 +8,15 @@ const Spotify = {
         if(accesToken){
             return accesToken
         }
-        const accesToken = window.location.href.match(/access_token=([^&]*)/)
+        const accesTokenMatch = window.location.href.match(/access_token=([^&]*)/)
         const expiresInMatch = window.location.href.match(/access_in=([^&]*)/)
+
+        if(accesTokenMatch && expiresInMatch){
+            accesToken = expiresInMatch[1]
+            const expiresIn = Number(expiresInMatch[1])
+        }
     },
+
     search = (term) => {
 
     }
