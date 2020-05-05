@@ -1,14 +1,12 @@
-const token
+const accesToken
 const clientId
 const redirectURI
 
 const Spotify = {
 
     getAccessToken = () => {
-        if(toke){
-            return token
-        }else{
-
+        if(accesToken){
+            return accesToken
         }
     },
     search = (term) => {
