@@ -14,6 +14,11 @@ const Spotify = {
         if(accesTokenMatch && expiresInMatch){
             accesToken = expiresInMatch[1]
             const expiresIn = Number(expiresInMatch[1])
+
+            //expiration access
+            window.setTimeout(() => accessToken = '', expiresIn * 1000)
+            window.history.pushState('Access Token', null, '/')
+            return accesToken
         }
     },
 
