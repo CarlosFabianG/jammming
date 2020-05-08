@@ -1,5 +1,5 @@
 const accesToken
-const clientId
+const clientId = process.env
 const redirectURI
 
 const Spotify = {
@@ -20,7 +20,7 @@ const Spotify = {
             window.history.pushState('Access Token', null, '/')
             return accesToken
         }else{
-            
+
         }
     },
 
